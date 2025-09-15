@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Website Design</title>
+    
+    <style>
+        .footer .email {
+            width: 45%;
+            padding: 10px;
+            border: 2px solid pink;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+:root{
+  --primary-color: #03045e;
+  --color: #4581cf;
+  --black: #666;
+  --white: #fff;
+  --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+*{
+  font-family: 'Roboto', sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+html::-webkit-scrollbar{
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: var(--primary-color);
+  border-radius: 5rem;
+}
+
+section{
+  padding: 2rem 7%;
+}
+
+.heading{
+  text-align: center;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  padding: 1.2rem 0;
+  font-size: 4rem;
+}
+
+.heading span{
+  color: var(--color);
+  text-transform: uppercase;
+}
+
+.btn{
+  display: inline-block;
+  border-radius: 5rem;
+  background: black;
+  color: var(--white);
+  box-shadow: var(--box-shadow);
+  padding: .9rem 3rem;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  font-size: 1.7rem;
+  margin-top: 1rem;
+}
+
+.btn::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: #5858b3;
+  z-index: -1;
+  left: 0;
+  transition: .3s linear;
+}
+
+.btn:hover::before{
+  width: 100%;
+}
+
+/* header */
+
+.header{
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  z-index: 1000;
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 7%;
+}
+
+.header .logo{
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: var(--black);
+}
+
+.header .logo i{
+  color: var(--primary-color);
+}
+
+.header .navbar a{
+  font-size: 1.7rem;
+  color: var(--black);
+  margin: 0 1rem;
+}
+
+.header .navbar a.active,
+.header .navbar a:hover{
+  color: var(--primary-color);
+}
+
+.header .icons div{
+  font-size: 2.5rem;
+  margin-left: 1.7rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.header .icons div:hover{
+  color: var(--primary-color);
+}
+
+/* login */
+
+.header .login-form{
+  position: absolute;
+  top: 115%; right: -105%;
+  background: var(--white);
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  width: 35rem;
+  padding: 2rem;
+}
+
+.header .login-form.active{
+  right: 2rem;
+  transition: .4s linear;
+}
+
+.header .login-form h3{
+  color: #C71585;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: .7rem;
+}
+
+.header .login-form .box{
+  border: .1rem solid rgba(0, 0, 0, 0.1);
+  margin: .7rem 0;
+  padding: 1rem 1.2rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-transform: none;
+  width: 100%;
+}
+
+.header .login-form .remember{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: .7rem 0;
+}
+
+.header .login-form .remember label{
+  font-size: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.header .login-form .btn{
+  width: 100%;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+#menu-btn{
+  display: none;
+}
+
+/* end */
+
+/* home */
+
+.home{
+  min-height: 95vh;
+  background: url(images/Makeup.jpg) no-repeat;
+  background-position: center !important;
+  background-size: cover !important;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home::before{
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.home .content{
+  text-align: center;
+  max-width: 60rem;
+}
+
+.home .content h3{
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: var(--white);
+  padding-bottom: 1.5rem;
+}
+
+.home .content h3 span{
+  text-transform: uppercase;
+  color: pink;
+}
+
+/* end */
+
+/* Footer Section Styling */
+.footer {
+  background: black;
+  padding-top: 0; /* Remove top padding to reduce space */
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 3rem;
+}
+
+.footer .box-container .box {
+  padding: 1rem 0;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.2rem;
+  color: #C71585;
+  padding: 1rem 0;
+}
+
+.footer .box-container .box h3 i {
+  padding-right: 0.5rem;
+}
+
+.footer .box-container .box p {
+  font-size: 1.4rem;
+  color: var(--black);
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+.footer .box-container .box p i {
+  padding-right: 0.5rem;
+  color: #C71585;
+}
+
+.footer .box-container .box .share {
+  padding-top: 1rem;
+}
+
+.footer .box-container .box .share a {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 50%;
+  border: 0.2rem solid #C71585;
+  color: #C71585;
+  margin-right: 0.5rem;
+  text-align: center;
+  transition: color 0.3s, background 0.3s;
+}
+
+.footer .box-container .box .share a:hover {
+  color: var(--white);
+  background: var(--primary-color);
+}
+
+.footer .box-container .box form .email {
+  width: 100%;
+  border-radius: 5rem;
+  border: 0.2rem solid #C71585;
+  background: none;
+  font-size: 1.5rem;
+  text-transform: none;
+  color: var(--black);
+  margin-bottom: 1rem;
+  padding: 1.2rem 1.4rem;
+}
+
+.footer .box-container .box form .btn {
+  cursor: pointer;
+}
+
+.footer .credit {
+  font-size: 2rem;
+  text-align: center;
+  border-top: 0.1rem solid var(--black);
+  padding: 1rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  color: var(--black);
+  }
+  
+  .footer .credit span {
+      color: #C71585;
+  }
+  
+  /* Adjust the spacing between product and contact sections */
+  .menu + .contact {
+      margin-top: 2rem; /* Adjust as needed */
+  }
+  
+
+@media(max-width:991px){
+
+  html{
+    font-size: 55%;
+  }
+
+  section{
+    padding: 2rem;
+  }
+
+}
+
+@media(max-width:768px){
+
+  #menu-btn{
+    display: inline-block;
+  }
+
+  .header .navbar{
+    position: absolute;
+    top: 99%; left: 0; right: 0;
+    background: #fff;
+    border-top: .1rem solid var(--primary-color);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  .header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .header .navbar a{
+    display: block;
+    margin: 2rem;
+    font-size: 2rem;
+  }
+
+  .package .box-container .box{
+    flex-direction: column;
+  }
+
+  .package .box-container .box .image,
+  .package .box-container .box .content,
+  .package .box-container .box .price{
+    width: 100%;
+  }
+
+  .package .box-container .box .image img{
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .package .box-container .box .price{
+    border-radius: 0 0 1rem 1rem;
+  }
+
+}
+
+@media(max-width:450px){
+  html{
+    font-size: 50%;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline from link */
+}
+.logo-image {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintains aspect ratio */
+  margin-right: 10px; /* Space between the logo and the text */
+}
+.logo-text {
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #333; /* Dark text color for better readability */
+  font-weight: bold; /* Make the text bold */
+}
+.tagline {
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #555; /* Slightly lighter color for the tagline */
+  font-style: italic; /* Italicize the tagline */
+}
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="./images/Cream and Brown Retro Streetwear Logo_20240517_190927_0000.png" alt="" class="logo-image">
+        <div>
+            <span class="logo-text">Glamour Glow</span>
+            <div class="tagline">Beauty Unveiled, Confidence Revealed</div>
+        </div>
+        <nav class="navbar">
+            <a href="homepage.html">home</a>
+            <a href="about.html">about us</a>
+            <a href="branches.html">branches</a>
+            <a href="product.html">products</a>
+            <a href="contact.html">contact us</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-user" id="login-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+       
+        </header>
+
+    <!-- contact us section starts -->
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>contact</span> us</h1>
+    <!-- footer section starts -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3 style="display: flex; align-items: center;">
+                    <img src="./images/Cream and Brown Retro Streetwear Logo_20240517_190927_0000.png" alt="Glamour Glow Logo" style="height: 24px; width: auto; margin-right: 10px;" />
+                    Glamour Glow
+                  </h3>  
+                <p>Beauty Unveiled, Confidence Revealed</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-tiktok"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <p><i class="fas fa-phone"></i> +123-456-7890</p>
+                <p><i class="fas fa-envelope"></i> glamourglow@gmail.com</p>
+                <p><i class="fas fa-map"></i> mandaluyong, philippines</p>
+            </div>
+
+            <div class="box">
+                <h3>subscribe</h3>
+                <p>subscribe for latest updates</p>
+                <form action="">
+                    <input type="email" placeholder="Enter your email" class="email">
+                </form>
+            </div>
+        </div>
+
+        <!-- <div class="credit">all rights  <span>reserved!</span> |2024</div> -->
+    </section>
+    <!-- footer section ends -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+    $('#login-btn').click(function(){
+        $('.login-form').toggleClass('active');
+        $('#menu-btn').removeClass('fa-times');
+        $('.navbar').removeClass('active');
+    });
+
+    $('#menu-btn').click(function(){
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('active');
+        $('.login-form').removeClass('active');
+    })
+
+    $(window).on('scroll load', function(){
+        $('#menu-btn').removeClass('fa-times');
+        $('.navbar').removeClass('active');
+        $('.login-form').removeClass('active');
+
+        $('section').each(function(){
+
+            let top = $(window).scrollTop();
+            let height = $(this).height();
+            let offset = $(this).offset().top - 200;
+            let id = $(this).attr('id');
+    
+            if(top >= offset && top < offset + height){
+                $('.navbar a').removeClass('active');
+                $('.navbar').find(`[href="#${id}"]`).addClass('active');
+            }
+    
+        });
+
+    });
+
+});
+
+
+    </script>
+</body>
+</html>

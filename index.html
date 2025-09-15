@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Website Design</title>
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+:root{
+  --primary-color: #03045e;
+  --color: #4581cf;
+  --black: #666;
+  --white: #fff;
+  --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+*{
+  font-family: 'Roboto', sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+html::-webkit-scrollbar{
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: var(--primary-color);
+  border-radius: 5rem;
+}
+
+section{
+  padding: 2rem 7%;
+}
+
+.heading{
+  text-align: center;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  padding: 1.2rem 0;
+  font-size: 4rem;
+}
+
+.heading span{
+  color: var(--color);
+  text-transform: uppercase;
+}
+
+.btn{
+  display: inline-block;
+  border-radius: 5rem;
+  background: black;
+  color: var(--white);
+  box-shadow: var(--box-shadow);
+  padding: .9rem 3rem;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  font-size: 1.7rem;
+  margin-top: 1rem;
+}
+
+.btn::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: #5858b3;
+  z-index: -1;
+  left: 0;
+  transition: .3s linear;
+}
+
+.btn:hover::before{
+  width: 100%;
+}
+
+/* header */
+
+.header{
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  z-index: 1000;
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 7%;
+}
+
+.header .logo{
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: var(--black);
+}
+
+.header .logo i{
+  color: var(--primary-color);
+}
+
+.header .navbar a{
+  font-size: 1.7rem;
+  color: var(--black);
+  margin: 0 1rem;
+}
+
+.header .navbar a.active,
+.header .navbar a:hover{
+  color: var(--primary-color);
+}
+
+.header .icons div{
+  font-size: 2.5rem;
+  margin-left: 1.7rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.header .icons div:hover{
+  color: var(--primary-color);
+}
+
+/* login */
+
+.header .login-form{
+  position: absolute;
+  top: 115%; right: -105%;
+  background: var(--white);
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  width: 35rem;
+  padding: 2rem;
+}
+
+.header .login-form.active{
+  right: 2rem;
+  transition: .4s linear;
+}
+
+.header .login-form h3{
+  color: #C71585;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: .7rem;
+}
+
+.header .login-form .box{
+  border: .1rem solid rgba(0, 0, 0, 0.1);
+  margin: .7rem 0;
+  padding: 1rem 1.2rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-transform: none;
+  width: 100%;
+}
+
+.header .login-form .remember{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: .7rem 0;
+}
+
+.header .login-form .remember label{
+  font-size: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.header .login-form .btn{
+  width: 100%;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+#menu-btn{
+  display: none;
+}
+
+/* end */
+
+/* home */
+
+.home{
+  min-height: 95vh;
+  background: url(images/Makeup.jpg) no-repeat;
+  background-position: center !important;
+  background-size: cover !important;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home::before{
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.home .content{
+  text-align: center;
+  max-width: 60rem;
+}
+
+.home .content h3{
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: var(--white);
+  padding-bottom: 1.5rem;
+}
+
+.home .content h3 span{
+  text-transform: uppercase;
+  color: pink;
+}
+
+/* end */
+
+/* banner */
+.banner .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+  padding-top: 5rem;
+}
+.banner .box-container .box{
+  text-align: center;
+  padding: 4rem;
+  background:black;
+  box-shadow: var(--box-shadow);
+  border-radius: 1rem;
+}
+
+.banner .box-container .box img{
+  margin: 1rem 0;
+  height: 5rem;
+  transition: 500ms ease;
+}
+
+.banner .box-container .box:hover img{
+  transform: scale(-1) rotate(180deg);
+}
+
+.banner .box-container .box h3{
+  font-size: 2rem;
+  padding: 1rem 0;
+  color: #fb6f92;
+}
+
+.banner .box-container .box p{
+  font-size: 1.5rem;
+  color: var(--black);
+  line-height: 2;
+}
+
+/* end */
+
+/* about us */
+
+.about .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6rem;
+  align-items: center;
+}
+
+.about .row .image{
+  flex: 1 1 30rem;
+}
+
+.about .row .image img{
+  width: 100%;
+}
+
+.about .row .content{
+  flex: 1 1 50rem;
+}
+
+.about .row .content h3{
+  font-size: 3.5rem;
+  color: black;
+  padding: 2rem 0;
+}
+
+.about .row .content p{
+  font-size: 1.6rem;
+  color: var(--black);
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+
+/* end */
+
+/* package */
+.heading {
+  color: #C71585; /* Dark pink color for the h1 element */
+}
+
+.heading span {
+  color: #FFB6C1; /* Light pink color for the span element */
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 24px;
+}
+
+.package .box-container .box{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+}
+
+.package .box-container .box .image{
+  flex: 1 1 30rem;
+  height: 30rem;
+}
+
+.package .box-container .box .image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.package .box-container .box .content{
+  padding: 3rem 2rem;
+}
+
+.package .box-container .box .content,
+.package .box-container .box .price{
+  flex: 1 1 calc(30% - 3rem);
+}
+
+.package .box-container .box .content h3{
+  font-size: 2.2rem;
+  color: black;
+}
+
+.package .box-container .box .content p{
+  font-size: 1.6rem;
+  color: var(--black);
+  padding-top: 1.5rem;
+  line-height: 1.8;
+}
+
+.package .box-container .box .price{
+  padding: 6.9rem 2rem;
+  text-align: center;
+  color: #fff;
+  background: rgb(53, 2, 2);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.package .box-container .box .price h4{
+  font-size: 2.9rem;
+  margin-bottom: 1rem;
+}
+
+.package .box-container .box .price h5{
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+}
+
+.package .box-container .box .price .stars i{
+  color: yellow;
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+/* end */
+
+/* product*/
+/* General Section Styling */
+section {
+  padding: 2rem 1rem;
+  margin: 0;
+}
+
+.menu .separator {
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0; /* Adjust spacing as needed */
+  grid-column: 1 / -1; /* Make the separator span across all columns */
+}
+
+.menu .separator h5 {
+  font-size: 1.8rem;
+  color: var(--black);
+  margin: 0;
+}
+
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column size as needed */
+  gap: 1.5rem;
+}
+
+
+
+/* Menu Section Styling */
+.menu {
+  padding-bottom: 0; /* Remove bottom padding to reduce space */
+}
+h5 {
+  text-align: center;
+  color:#C71585;
+  font-size: 16px;
+}
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 columns */
+  gap: 1.5rem;
+}
+
+.menu .box-container .box {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  aspect-ratio: 1 / 1; /* Ensures boxes remain square */
+  display: flex;
+  flex-direction: column;
+}
+
+.menu .box-container .box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu .box-container .box:hover {
+  transform: scale(1.05);
+}
+
+.menu .box-container .box:hover img {
+  transform: scale(1.1);
+}
+
+.menu .box-container .box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  text-align: center;
+}
+
+.menu .box-container .box:hover .content {
+  opacity: 1;
+}
+
+.menu .box-container .box .content h3 {
+  font-size: 8px;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.menu .box-container .box .content p {
+  font-size: 8px;
+  color: var(--black);
+  margin: 0.5rem 0;
+}
+
+.menu .box-container .box .content .btn {
+  font-size: 0.6rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Footer Section Styling */
+.footer {
+  background: black;
+  padding-top: 0; /* Remove top padding to reduce space */
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 3rem;
+}
+
+.footer .box-container .box {
+  padding: 1rem 0;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.2rem;
+  color: #C71585;
+  padding: 1rem 0;
+}
+
+.footer .box-container .box h3 i {
+  padding-right: 0.5rem;
+}
+
+.footer .box-container .box p {
+  font-size: 1.4rem;
+  color: var(--black);
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+.footer .box-container .box p i {
+  padding-right: 0.5rem;
+  color: #C71585;
+}
+
+.footer .box-container .box .share {
+  padding-top: 1rem;
+}
+
+.footer .box-container .box .share a {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 50%;
+  border: 0.2rem solid #C71585;
+  color: #C71585;
+  margin-right: 0.5rem;
+  text-align: center;
+  transition: color 0.3s, background 0.3s;
+}
+
+.footer .box-container .box .share a:hover {
+  color: var(--white);
+  background: var(--primary-color);
+}
+
+.footer .box-container .box form .email {
+  width: 100%;
+  border-radius: 5rem;
+  border: 0.2rem solid #C71585;
+  background: none;
+  font-size: 1.5rem;
+  text-transform: none;
+  color: var(--black);
+  margin-bottom: 1rem;
+  padding: 1.2rem 1.4rem;
+}
+
+.footer .box-container .box form .btn {
+  cursor: pointer;
+}
+
+.footer .credit {
+  font-size: 2rem;
+  text-align: center;
+  border-top: 0.1rem solid var(--black);
+  padding: 1rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  color: var(--black);
+  }
+  
+  .footer .credit span {
+      color: #C71585;
+  }
+  
+  /* Adjust the spacing between product and contact sections */
+  .menu + .contact {
+      margin-top: 2rem; /* Adjust as needed */
+  }
+  
+
+@media(max-width:991px){
+
+  html{
+    font-size: 55%;
+  }
+
+  section{
+    padding: 2rem;
+  }
+
+}
+
+@media(max-width:768px){
+
+  #menu-btn{
+    display: inline-block;
+  }
+
+  .header .navbar{
+    position: absolute;
+    top: 99%; left: 0; right: 0;
+    background: #fff;
+    border-top: .1rem solid var(--primary-color);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  .header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .header .navbar a{
+    display: block;
+    margin: 2rem;
+    font-size: 2rem;
+  }
+
+  .package .box-container .box{
+    flex-direction: column;
+  }
+
+  .package .box-container .box .image,
+  .package .box-container .box .content,
+  .package .box-container .box .price{
+    width: 100%;
+  }
+
+  .package .box-container .box .image img{
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .package .box-container .box .price{
+    border-radius: 0 0 1rem 1rem;
+  }
+
+}
+
+@media(max-width:450px){
+  html{
+    font-size: 50%;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline from link */
+}
+.logo-image {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintains aspect ratio */
+  margin-right: 10px; /* Space between the logo and the text */
+}
+.logo-text {
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #333; /* Dark text color for better readability */
+  font-weight: bold; /* Make the text bold */
+}
+.tagline {
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #555; /* Slightly lighter color for the tagline */
+  font-style: italic; /* Italicize the tagline */
+}
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="./images/Cream and Brown Retro Streetwear Logo_20240517_190927_0000.png" alt="" class="logo-image">
+        <div>
+            <span class="logo-text">Glamour Glow</span>
+            <div class="tagline">Beauty Unveiled, Confidence Revealed</div>
+        </div>
+        <nav class="navbar">
+            <a href="homepage.html">home</a>
+            <a href="about.html">about us</a>
+            <a href="branches.html">branches</a>
+            <a href="product.html">products</a>
+            <a href="contact.html">contact us</a>
+        </nav>
+
+           </header>
+    <!-- header section ends -->
+    <!-- home section starts -->
+    <section class="home" id="home">
+        <div class="content">
+            <h3>glamour glow <br> <span>Beauty Unveiled,</span> Confidence Revealed</h3>
+            <a href="#" class="btn">read more</a>
+        </div>
+    </section>
+    <!-- home section ends -->
+
+    <!-- banner section starts -->
+    <section class="banner">
+        <div class="box-container">
+
+            <div class="box">
+                <img src="images/BANNER1.png" alt="">
+                <h3>Ultra Makeup</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi placeat.</p>
+            </div>
+
+            <div class="box">
+                <img src="images/cosmeticsjpg.jpg" alt="">
+                <h3>cosmetics</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi placeat.</p>
+            </div>
+
+            <div class="box">
+                <img src="images/3955d6b0f2d0cb0b23f2246f07441157.png" alt="">
+                <h3>makeup brush</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi placeat.</p>
+            </div>
+
+            <div class="box">
+                <img src="images/pro.jpg" alt="">
+                <h3>make up skin care products</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi placeat.</p>
+            </div>
+        </div>
+    </section>
+    <!-- banner section ends -->
+
+    <!-- about us section starts -->
+    <section class="about" id="about">
+        <h1 class="heading">about <span>us</span></h1>
+        <div class="row">
+            <div class="image">
+                <img src="images/aboutm.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Welcome To Glamour Glow: Where Beauty Unveiled, Confidence Revealed</h3>
+                <p>Your text here for about us</p>
+                <p>your text here for about us</p>
+
+            </div>
+        </div>
+    </section>
+    <!-- about us section ends -->
+
+    <!-- branches section starts -->
+    <section class="package" id="package">
+        <h1 class="heading"><span>our </span> branches</h1>
+        <h1>Local Branches</h1>
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/branches1jpg.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>SM Megamall, Mandaluyong City, Metro Manila</h3>
+                    <p>Location: 3rd Floor, Building A, SM Megamall, EDSA Corner Doña Julia Vargas Avenue, Ortigas Center, Mandaluyong City, Metro Manila. 
+                    </p>
+                </div>
+                <div class="price">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#" class="btn">visit us</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/branches2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Greenbelt 5, Makati City, Metro Manila</h3>
+                    <p>Location: Ground Floor, Greenbelt 5, Ayala Center, Makati City, Metro Manila
+                    </p>
+                </div>
+                <div class="price">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#" class="btn">visit us</a>
+                </div>
+            </div>
+               
+            <h1>International Branches</h1>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/branches3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Tokyo, Japan</h3>
+                    <p>Location: 1-1-10 Shibuya, Tokyo 150-0003, Japan</p>
+                </div>
+                <div class="price">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#" class="btn">visit us</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/branches4.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Sydney, Australia</h3>
+                    <p>Location:77 Market Street, Sydney NSW 2000, Australia</p>
+                </div>
+                <div class="price">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#" class="btn">visit us</a>
+                </div>
+            </div>
+             
+            <div class="box">
+                <div class="image">
+                    <img src="images/branches5.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Paris France</h3>
+                    <p>Location: 70-72 Avenue des Champs-Élysées, 75008 Paris, France</p>
+                </div>
+                <div class="price">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#" class="btn">visit us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- branches section ends -->
+
+    <!-- product section starts -->
+
+    <section class="menu" id="menu">
+        <h1 class="heading"><span>our </span> products</h1>
+             <!-- Add the separator text -->
+             <div class="separator">
+                <h5>DIOR MAKEUP BRANDS</h5>
+            </div>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/product1.jpg" alt="">
+                <div class="content">
+                    <h3>Make Up Brushes</h3>
+                    <p>250.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product2.jpg" alt="">
+                <div class="content">
+                    <h3>Dior Lip Balm Charming Lipstick</h3>
+                    <p>678.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product3.jpg" alt="">
+                <div class="content">
+                    <h3>Dior Glow Palette Universal</h3>
+                    <p>4,150.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product4.jpg" alt="">
+                <div class="content">
+                    <h3>Dior Lip Gloss Plump Effect</h3>
+                    <p>1,259.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product5.jpg" alt="">
+                <div class="content">
+                    <h3>Dior Cushion Foundation Oil</h3>
+                    <p>1,249.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product6.jpg" alt="">
+                <div class="content">
+                    <h3>Dior Lipstick Set Matte Black Tube</h3>
+                    <p>799.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product7.jpg" alt="">
+                <div class="content">
+                    <h3>Authentic Dior Lip Glow Oil</h3>
+                    <p>365.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product8.jpg" alt="">
+                <div class="content">
+                    <h3>Christian Dior Addict Lipsticks</h3>
+                    <p>1,059.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product9.jpg" alt="">
+                <div class="content">
+                    <h3>Christian Dior Rouge 3.5g</h3>
+                    <p>1,655.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product10.jpg" alt="">
+                <div class="content">
+                    <h3>Christian Dior Skin Glow Foundation</h3>
+                    <p>2,425.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+    
+             <!-- Add the separator text -->
+        <div class="separator">
+            <h5>MAYBELLINE MAKEUP BRANDS</h5>
+        </div>
+
+            <div class="box">
+                <img src="images/product11.jpg" alt="">
+                <div class="content">
+                    <h3>maybelline aerogel liduid foundation</h3>
+                    <p>313.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product10.jpg" alt="">
+                <div class="content">
+                    <h3>Christian Dior Skin Glow Foundation</h3>
+                    <p>2,425.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product13.jpg" alt="">
+                <div class="content">
+                    <h3>maybelline powder foundation</h3>
+                    <p>475.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product14.jpg" alt="">
+                <div class="content">
+                    <h3>maybelline matte cream lipsticks</h3>
+                    <p>266.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product15.jpg" alt="">
+                <div class="content">
+                    <h3>maybelline intstant age rewind multi use</h3>
+                    <p>380.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product16.jpg" alt="">
+                <div class="content">
+                    <h3>maybelline lipsticks</h3>
+                    <p>236.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product17.jpg" alt="">
+                <div class="content">
+                    <h3>maybelline matte liquid lipsticks</h3>
+                    <p>39.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product18.jpg" alt="">
+                <div class="content">
+                    <h3>maybelline matte liquid lipsticks</h3>
+                    <p>39.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product19.jpg" alt="">
+                <div class="content">
+                    <h3>maybelline superstray powder foundation</h3>
+                    <p>499.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product20.jpg" alt="">
+                <div class="content">
+                    <h3>maybelline matte liquid lipstick 50 voyuger</h3>
+                    <p>59.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+             <!-- Add the separator text -->
+             <div class="separator">
+                <h5>SACE LADY MAKEUP BRANDS</h5>
+            </div>
+            <div class="box">
+                <img src="images/product21.jpg" alt="">
+                <div class="content">
+                    <h3>sace lady lip tint</h3>
+                    <p>189.24</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product22.jpg" alt="">
+                <div class="content">
+                    <h3>sace lady maskara waterproof curling</h3>
+                    <p>91.55</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product23.jpg" alt="">
+                <div class="content">
+                    <h3>sace lady 3 in 1 palette mstte</h3>
+                    <p>159.20</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product24.jpg" alt="">
+                <div class="content">
+                    <h3>sace lady concealer waterproof make up</h3>
+                    <p>138.81</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product25.jpg" alt="">
+                <div class="content">
+                    <h3>sace lady oil control powder waterproof</h3>
+                    <p>181.55</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product26.jpg" alt="">
+                <div class="content">
+                    <h3>sace lady oil loose powder poreless oil-control makeup</h3>
+                    <p>132.05</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product27.jpg" alt="">
+                <div class="content">
+                    <h3>sace lady oil poreless foundation cream matte</h3>
+                    <p>136.04</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product28.jpg" alt="">
+                <div class="content">
+                    <h3>sace lady 3 in 1 liquid highlighter and eyeshadow</h3>
+                    <p>99.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product29.jpg" alt="">
+                <div class="content">
+                    <h3>sace lady eyeliner waterproof stamp black stamp</h3>
+                    <p>151.05</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product30.jpg" alt="">
+                <div class="content">
+                    <h3>sace lady oil control powder waterproof </h3>
+                    <p>189.24</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+             <!-- Add the separator text -->
+             <div class="separator">
+                <h5>ESTE LAUDER MAKEUP BRANDS</h5>
+            </div>
+            <div class="box">
+                <img src="images/product31.jpg" alt="">
+                <div class="content">
+                    <h3>este lauder double wear sheer flattery loose powder</h3>
+                    <p>1,399.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product32.jpg" alt="">
+                <div class="content">
+                    <h3>este lauder advanced night repair face serum 7ml</h3>
+                    <p>353.50</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product33.jpg" alt="">
+                <div class="content">
+                    <h3>este lauder double wear stay-in place makeup</h3>
+                    <p>1,790.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product34.jpg" alt="">
+                <div class="content">
+                    <h3>este lauder revitalizing youth power sot creme 15ml</h3>
+                    <p>976.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product35.jpg" alt="">
+                <div class="content">
+                    <h3>este lauder 0oz/30 ml double wear foundation</h3>
+                    <p>1,870.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product36.jpg" alt="">
+                <div class="content">
+                    <h3>este lauder stay-in-place makeup</h3>
+                    <p>559.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product37.jpg" alt="">
+                <div class="content">
+                    <h3>este lauder foundation 30ml double wear stay-in</h3>
+                    <p>682.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product38.jpg" alt="">
+                <div class="content">
+                    <h3>este lauder double wear stay-in foundation  makeup spf10</h3>
+                    <p>499.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product39.jpg" alt="">
+                <div class="content">
+                    <h3>este lauder double wear stay-in place makeup spf10 30ml</h3>
+                    <p>2,115.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product40.jpg" alt="">
+                <div class="content">
+                    <h3>este lauder advanced night repair face serum 7ml</h3>
+                    <p>660.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+             <!-- Add the separator text -->
+             <div class="separator">
+                <h5>O.TWO.O LAUDER MAKEUP BRANDS</h5>
+            </div>
+              <div class="box">
+                <img src="images/product41.jpg" alt="">
+                <div class="content">
+                    <h3>o.two.o maskara waterproof </h3>
+                    <p>153.10</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+             <div class="box">
+                <img src="images/product42.jpg" alt="">
+                <div class="content">
+                    <h3>o.two.o confident queen 3 color smooth </h3>
+                    <p>147.43</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+             <div class="box">
+                <img src="images/product43.jpg" alt="">
+                <div class="content">
+                    <h3>o.two.o 3d soft focus face powder waterproof long lasting oil</h3>
+                    <p>299.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+              <div class="box">
+                <img src="images/product44.jpg" alt="">
+                <div class="content">
+                    <h3>o.two.o face setting powder cushion compact pwder oil</h3>
+                    <p>220.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+              <div class="box">
+                <img src="images/product45.jpg" alt="">
+                <div class="content">
+                    <h3>o.two.o 2 IN 1 EYEBROW CREAM AND bow wax with brush 3 colors</h3>
+                    <p>144.15</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product46.jpg" alt="">
+                <div class="content">
+                    <h3>o.two.o 2pcs face makeup set face base oil control matte face powder</h3>
+                    <p>290.06</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product47.jpg" alt="">
+                <div class="content">
+                    <h3>o.two.o makeup blush cream stick 6 colors waterproof</h3>
+                    <p>144.40</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product48.jpg" alt="">
+                <div class="content">
+                    <h3>o.two.o loose powder 3 colors long lasting water proof, oil control</h3>
+                    <p>228.00</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product49.jpg" alt="">
+                <div class="content">
+                    <h3>o.two.o confident queen lipstick 2 in 1 lipstick double lip balm</h3>
+                    <p>161.42</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/product50.jpg" alt="">
+                <div class="content">
+                    <h3>o.two.o confident women highlighter makeup shadow contour stick</h3>
+                    <p>145.01</p>
+                    <a href="#" class="btn addToCartButton" data-url="https://shopee.ph/">Add to cart</a>
+                </div>
+            </div>
+
+          
+        </div>
+          
+        </div>
+    </section>
+    
+
+    <!-- product section ends -->
+
+    <!-- contact us section starts -->
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>contact</span> us</h1>
+    <!-- footer section starts -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3 style="display: flex; align-items: center;">
+                    <img src="./images/Cream and Brown Retro Streetwear Logo_20240517_190927_0000.png" alt="Glamour Glow Logo" style="height: 24px; width: auto; margin-right: 10px;" />
+                    Glamour Glow
+                  </h3>  
+                <p>Beauty Unveiled, Confidence Revealed</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-tiktok"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <p><i class="fas fa-phone"></i> +123-456-7890</p>
+                <p><i class="fas fa-envelope"></i> glamourglow@gmail.com</p>
+                <p><i class="fas fa-map"></i> mandaluyong, philippines</p>
+            </div>
+
+            <div class="box">
+                <h3>subscribe</h3>
+                <p>subscribe for latest updates</p>
+                <form action="">
+                    <input type="email" placeholder="Enter your email" class="email">
+                </form>
+            </div>
+        </div>
+
+        <div class="credit">all rights  <span>reserved!</span> |2024</div>
+    </section>
+    <!-- footer section ends -->
+
+   
+    <script>
+document.querySelectorAll('.addToCartButton').forEach(function(button) {
+    button.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        var shopeeProductUrl = this.getAttribute('data-url'); 
+        window.location.href = shopeeProductUrl;
+    });
+});
+    </script>
+</body>
+</html>
